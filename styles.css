@@ -58,8 +58,7 @@ button:disabled{opacity:.6; cursor:not-allowed}
 }
 .meta{display:flex; flex-wrap:wrap; gap:12px; color:var(--muted); font-size:.9rem}
 .actions{display:flex; gap:8px; margin-top:6px}
-a.btn{display:inline-block; padding:8px 10px; border-radius:10px; border:1px solid var(--border); color:var(--text); text-decoration:none}
-a.btn.map{background:#ffffff; border-color:#dee2e6}
+
 .distance{color:var(--accent)}
 .footer{opacity:.7; padding-bottom:40px}
 

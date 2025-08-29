@@ -26,9 +26,6 @@ const haversine = (lat1, lon1, lat2, lon2) => {
 
 const fmtDist = (m) => (m >= 1000 ? `${(m / 1000).toFixed(2)} km` : `${Math.round(m)} m`);
 
-const toGmapsLink = (name, lat, lon) =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name || "")}%20@${lat},${lon}`;
-
 // ===== DOM refs =====
 const amenitySel = $("#amenity");
 const cuisineInput = $("#cuisine");
@@ -425,20 +422,12 @@ function renderList(items) {
 
     const actions = document.createElement("div");
     actions.className = "actions";
-    const mapA = document.createElement("a");
-    mapA.className = "btn map";
-    mapA.href = toGmapsLink(it.name, it.lat, it.lon);
-    mapA.target = "_blank";
-    mapA.rel = "noopener";
-    mapA.textContent = "เปิดใน Google Maps";
-    actions.appendChild(mapA);
-
     const osmA = document.createElement("a");
     osmA.className = "btn";
     osmA.href = `https://www.openstreetmap.org/?mlat=${it.lat}&mlon=${it.lon}#map=19/${it.lat}/${it.lon}`;
     osmA.target = "_blank";
     osmA.rel = "noopener";
-    osmA.textContent = "ดูบน OSM";
+    osmA.textContent = "ดูแผนที่";
     actions.appendChild(osmA);
 
     li.appendChild(actions);
